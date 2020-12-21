@@ -15,7 +15,7 @@ function preload()
 
 function setup() {
 	createCanvas(800, 700);
-	rectMode(CENTER);
+	
 	
 	boxleftSprite=createSprite(350+200 , boxY, 20,100);
 	boxleftSprite.shapeColor="red";
