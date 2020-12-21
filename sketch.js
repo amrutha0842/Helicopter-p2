@@ -1,6 +1,7 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground;
 var boxleftSprite,boxrightSprite,baseSprite;
+var boxPosition;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -16,11 +17,11 @@ function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	
-	boxleftSprite=createSprite(boxPosition+200 , boxY, 20,100);
+	boxleftSprite=createSprite(350+200 , boxY, 20,100);
 	boxleftSprite.shapeColor="red";
-	boxrightSprite=createSprite(boxPosition, boxY,20,100);
+	boxrightSprite=createSprite(350, boxY,20,100);
 	boxrightSprite.shapeColor="red";
-	baseSprite=createSprite(boxPosition+100, boxY+40, 200,20);
+	baseSprite=createSprite(350+100, boxY+40, 200,20);
 	baseSprite.shapeColor="red";
 	
 
