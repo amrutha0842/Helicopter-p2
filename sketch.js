@@ -37,11 +37,11 @@ function setup() {
 
 	boxrightSprite=createSprite(boxPosition+200 , boxY, 20,100); 
 	boxrightSprite.shapeColor=color(255,0,0); 
-	boxRightBody = Bodies.rectangle(boxPosition+200-20 , boxY, 20,100 , {isStatic:true} ); 
+	boxRightBody = Bodies.rectangle(boxPosition-100+200-20 , boxY, 20,100 , {isStatic:true} ); 
 	World.add(world, boxRightBody);
 	
 
-	World.add(world, boxLeftBody, boxRightBody, boxBottomBody);
+	
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
