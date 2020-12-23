@@ -13,7 +13,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-
+var world,engine;
 function preload()
 {
 	helicopterIMG=loadImage("helicopter.png")
