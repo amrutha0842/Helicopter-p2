@@ -8,12 +8,13 @@ var boxBottomBody;
 var boxBase;
 var boxrightSprite;
 var boxRightBody;
+var world,engine;
 
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var world,engine;
+ 
 function preload()
 {
 	helicopterIMG=loadImage("helicopter.png")
@@ -22,6 +23,9 @@ function preload()
 
 function setup() {
 	createCanvas(800, 700);
+
+	engine=Engine.create();
+	world=engine.world;
 	
 	boxPosition=width/2-100; 
 	boxY=610;
@@ -92,6 +96,10 @@ function keyPressed() {
     
   }
 }
+
+
+
+
 
 
 
