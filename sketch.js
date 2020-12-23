@@ -29,6 +29,7 @@ function setup() {
 	boxleftSprite=createSprite(boxPosition, boxY, 20,100); 
 	boxleftSprite.shapeColor=color(255,0,0); 
 	boxLeftBody = Bodies.rectangle(boxPosition+20, boxY, 20,100 , {isStatic:true} ); 
+	World.add(world,boxLeftBody);
 
 	boxBase=createSprite(boxPosition+100, boxY+40, 200,20); 
 	boxBase.shapeColor=color(255,0,0); 
