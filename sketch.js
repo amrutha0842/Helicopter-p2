@@ -2,6 +2,13 @@ var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground;
 var boxleftSprite,boxrightSprite,baseSprite;
 var boxPosition;
+var boxY;
+var boxLeftBody;
+var boxBottomBody;
+var boxBase;
+var boxrightSprite;
+var boxRightBody;
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -16,15 +23,25 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	
-	
-	boxleftSprite=createSprite(350+200 , boxY, 20,100);
-	boxleftSprite.shapeColor="red";
-	boxrightSprite=createSprite(350, boxY,20,100);
-	boxrightSprite.shapeColor="red";
-	baseSprite=createSprite(350+100, boxY+40, 200,20);
-	baseSprite.shapeColor="red";
+	boxPosition=width/2-100; 
+	boxY=610;
+
+	boxleftSprite=createSprite(boxPosition, boxY, 20,100); 
+	boxleftSprite.shapeColor=color(255,0,0); 
+	boxLeftBody = Bodies.rectangle(boxPosition+20, boxY, 20,100 , {isStatic:true} ); 
+
+	boxBase=createSprite(boxPosition+100, boxY+40, 200,20); 
+	boxBase.shapeColor=color(255,0,0); 
+	boxBottomBody = Bodies.rectangle(boxPosition+100, boxY+45-20, 200,20 , {isStatic:true} ); 
+	World.add(world, boxBottomBody);
+
+	boxrightSprite=createSprite(boxPosition+200 , boxY, 20,100); 
+	boxrightSprite.shapeColor=color(255,0,0); 
+	boxRightBody = Bodies.rectangle(boxPosition+200-20 , boxY, 20,100 , {isStatic:true} ); 
+	World.add(world, boxRightBody);
 	
 
+	World.add(world, boxLeftBody, boxRightBody, boxBottomBody);
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
